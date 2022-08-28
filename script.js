@@ -16,6 +16,7 @@ let chunks = []
 navigator.mediaDevices.getUserMedia(constraints)
 .then((stream) => {
     video.srcObject = stream
+    video.muted=true
     recorder = new MediaRecorder(stream)
     recorder.addEventListener("start",(e)=>{
         chunks=[];
